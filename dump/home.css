@@ -1,0 +1,457 @@
+*{
+    margin : 0;
+    padding : 0;
+    font-family : sans-serif;
+    box-sizing: border-box;
+}
+@font-face {
+    font-family:"BebasNeueRegular";
+    src:url(../font/bebas_neue/BebasNeue-Regular.eot) format('embedded-opentype'),
+        url(../font/bebas_neue/BebasNeue-Regular.woff) format('woff'),
+        url(../font/bebas_neue/BebasNeue-Regular.ttf) format('truetype');
+    }
+
+html{
+    scroll-behavior: smooth;
+}
+
+
+body::-webkit-scrollbar {
+    width: 12px;
+    border-radius: 20px;               /* width of the entire scrollbar */
+    }
+    
+body::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.2);     /* color of the tracking area */
+    }
+
+body::-webkit-scrollbar-thumb {
+    background: rgba(90, 90, 90);
+    }
+
+        
+
+/** header section **/
+
+header{
+    width: 100%;
+    height: 70px;
+    line-height: 75px;
+    padding: 0px 100px;
+    background: #800000;
+    position: absolute;    
+}
+
+/** navigation bar **/
+
+.navbar{
+    height:20%;
+    width: 85%;
+    margin: auto;
+    padding: 20px 0;
+    display: flex;  
+    align-items: center;
+    justify-content: space-between;
+}
+
+/** mfl logo**/
+
+.logo{
+    height: auto;
+    margin-bottom: -60px;
+    margin-left: -100px;
+    width: 200px;
+    cursor: pointer;
+}
+
+/** user logo **/
+
+.userlogo{
+    height: auto;
+    margin-bottom: -20px;
+    margin-right: -120px;
+    width: 50px;
+    cursor: pointer;
+}
+
+/** navbar ultimate list **/
+
+.navbar ul li{
+    list-style: none;
+    display: inline-block;
+    right:-100px;
+    bottom: -15px;
+    margin: 0 20px;
+    position: relative;
+}
+
+.navbar ul li a{
+    font-family:'BebasNeueRegular', sans-serif;
+    font-size: 22px;
+    text-decoration: none;
+    color: #ffff;
+    text-transform: uppercase;
+}
+
+
+.navbar ul li::after{
+    content: '';
+    height: 2px;
+    width: 0%;
+    background: #ffff;
+    position: absolute;
+    left: 0;
+    bottom: 20px;
+    transition: 0.5s;
+}
+.navbar ul li:hover::after{
+    width: 100%;
+}
+
+/** background  image**/
+
+.banner{
+    width: 100%;
+    height: 150vh;
+    background-image:
+    linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),url(../img/mfl_banner.jpg);
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+}
+
+/** main content **/
+.content{
+    
+    left: 550px;
+    position: absolute;
+    top: 25%;
+    transform: translateY(-50%);
+    text-align: center;
+    color: #ffff;
+}
+
+.content h1{
+    
+    margin-top:40px;
+    font-size:30px;
+}
+
+.content p{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin:1px auto;
+    font-size: 15px;
+}
+
+/** button **/
+button{
+    width: 200px;
+    padding: 15px 0;
+    text-align: center;
+    margin: 20px 10px;
+    border-radius: 25px;
+    font-weight: bold;
+    border: 2px solid #800000;
+    background-color: transparent;
+    color: #ffff;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+}
+
+span{
+    background: #800000;
+    height: 100%;
+    width: 0;
+    border-radius: 25px;
+    position: absolute;
+    bottom:0;
+    left: 0;    
+    z-index: -1;
+    transition: 0.5s;
+}   
+
+button:hover span{
+    width: 100%;
+}
+
+button:hover{
+    border:none;
+}
+
+/** dropdown for about section **/
+
+.dropdown-about{
+    transition:0.5s;
+    display: block;
+    position:absolute;
+    right: -100%;
+    width: auto;
+    top: auto;
+    background-color: #fdfdfd;
+    visibility: hidden;
+    opacity: 0;
+    border-radius: 20px;
+    box-shadow: 0 0 128px 0 rgba(0,0,0,0.1),
+                0 32px 64px -48px rgba(0,0,0,1);
+    
+}
+
+
+.navbar ul li:hover .dropdown-about{
+
+    opacity: 100;
+    visibility: visible;
+
+}
+
+.dropdown-about ul{
+    
+    display: block;
+    margin: 20px 0px;
+    font-size: 10px;
+    background-color: #4d0000;
+}
+
+.dropdown-about ul li{
+
+    width: 150px;
+    right: -0px;
+    bottom: 100%;
+    text-align: center;
+
+}
+
+
+
+/** dropdown for user section **/
+
+.dropdown-user{
+    transition:0.5s;
+    display: block;
+    position:absolute;
+    right: -110px;
+    width: auto;
+    top: auto;
+    background-color: #fdfdfd;
+    visibility: hidden;
+    opacity: 0;
+    border-radius: 20px;
+    box-shadow: 0 0 128px 0 rgba(0,0,0,0.1),
+                0 32px 64px -48px rgba(0,0,0,1);
+    
+}
+
+
+.navbar ul li:hover .dropdown-user{
+
+    visibility: visible;
+    opacity: 100;
+}
+
+.dropdown-user ul{
+    
+    display: block;
+    margin: 20px 0px;
+    background-color: #4d0000;
+}
+
+.dropdown-user ul li{
+
+    width: 150px;
+    right: 0px;
+    bottom: 100%;
+    text-align: center;
+    
+
+}
+
+/** User Full Name **/
+.username{
+    
+    background-color: #000923;
+    overflow:hidden;
+    border-radius: 30px;
+    display: block;
+    width: auto;
+    position: absolute;
+    top: 17%;
+    text-align: left;
+    padding: 30px;
+    left: 50px;
+    box-shadow: 0 0 128px 0 rgba(0,0,0,0.1),
+                0 32px 64px -48px rgba(0,0,0,1);
+    
+    
+}
+
+.username h1{
+    padding-bottom: 5px;
+    font-size:30px;
+    color: #ffff;
+}
+
+.username p{
+    padding-top: 5px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin:1px auto;
+    font-size: 15px;
+    color: #ffff;
+}
+
+
+/** button **/
+button{
+    width: 200px;
+    padding: 15px 0;
+    text-align: center;
+    margin: 20px 10px;
+    border-radius: 25px;
+    font-weight: bold;
+    border: 2px solid #800000;
+    background-color: transparent;
+    color: #ffff;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+}
+
+span{
+    background: #800000;
+    height: 100%;
+    width: 0;
+    border-radius: 25px;
+    position: absolute;
+    bottom:0;
+    left: 0;    
+    z-index: -1;
+    transition: 0.5s;
+}   
+
+button:hover span{
+    width: 100%;
+}
+
+button:hover{
+    border:none;
+}
+
+/** TICKET CONTENT **/
+
+.ticket-content-title{
+    background-color: #4d0000;
+    z-index: 1;
+    overflow:visible;
+    width: fit-content;
+    position: absolute;
+    top: 45%;
+    width: 100%;
+    height: 70px;
+    line-height: 30px;
+    text-align: center;
+    padding: 20px;
+    
+}
+
+.ticket-content-title h1{
+    font-size: 20px;
+    color: #ffff;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    box-shadow: 0 0 128px 0 rgba(0,0,0,0.1),
+                0 32px 64px -48px rgba(0,0,0,2);
+}
+
+.ticket-content{
+    display:list-item;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    position:relative;
+    padding: 100px;
+    top: 35%;
+    left: 40px;
+    scroll-behavior: smooth;
+    justify-content: space-around;
+    
+}
+
+.ticket-content::-webkit-scrollbar{
+    display: none;
+}
+
+
+.ticket-content-image{
+    width: 100%;
+    max-height: 250px;
+    margin-right: 20px;
+}
+
+
+
+.ticket-content a{
+    display: contents;
+}
+
+.ticket-content a p{
+    color: #fdfdfd;
+}
+
+.ticket-container {
+    position: relative;
+    transition: transform 450ms;
+    width: 100%;
+    margin-right: 20px;
+    display: flexbox;
+}
+  
+.ticket-overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: #000923;
+    transition: transform 450ms;
+}
+
+
+.ticket-text{
+    position: relative;
+    color: #fdfdfd;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: center;
+    font-size: 10px;
+    padding: 50px 5px;
+
+}
+
+.ticket-container:hover .ticket-overlay{
+    opacity: 1;
+    transform: scale(1.2);
+}
+
+
+#footer{
+    background-color: #000923;
+    height: 150px;
+    position: relative;
+    clear: both;
+}
+
+.footer-text{
+    position: relative;
+    text-align: center;
+    top: 50%; 
+    color: white;
+    font-size: 15px;
+    
+}
+
+.footer-text p{
+    margin-top: 5px;
+    font-size: 10px;
+}
+

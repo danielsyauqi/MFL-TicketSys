@@ -1,0 +1,189 @@
+html{
+    margin: 0;
+    padding: 0;
+}
+body {
+
+    background-color: #f7e9dc;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.sales {
+    min-width: 400px;
+     margin: 0 auto  ;
+     font-family: sans-serif;
+ }
+ .sales_body {
+     background-color: #fffcf7;
+     border-radius: 1rem 1rem 0 0;
+     padding:0 2rem;
+     border-radius: 1rem;
+ }
+ .sales_body h3{
+     padding: 1rem 0;
+ }
+ .bar_canvas{
+     background-color: #fffcf7;
+     display: flex;
+     flex-direction: row;
+     align-items: flex-end ;
+     justify-content: space-around;
+     gap: .8rem;
+     height: 10rem;
+     padding: 0 0 2rem 0;
+ }
+ 
+ 
+ 
+ .bar_canvas > aside:hover {
+     background-color: #b4dfe5;
+ }
+ .bar_canvas > aside {
+     background-color: #ec755d;
+     height:var(--i);
+     margin: 0;
+     padding: 0;
+     flex: 1;
+     border-radius: .2rem;
+     position: relative;
+     animation: rise .5s .1s ease-out forwards;
+ 
+ }
+ 
+ .bar_canvas > aside:hover::after {
+     content: var(--price);
+     color: #b4dfe5;
+     padding: .4rem;
+     text-align: center;
+     width:100%;
+     background: black;
+     position: absolute;
+     top: 0;
+     left: 50%;
+     font-size: .8rem;
+     transform: translate(-50%,-2rem);
+ }
+ .bar_canvas > aside p {
+     position: absolute;
+     bottom: 0;
+     left: 50%;
+     margin: 0;
+     padding: 0;
+     transform: translate(-50%,1.2rem);
+ }
+ 
+ .sales_footer{
+     background-color: #fffcf7;
+     display: flex;
+     justify-content: space-between;
+     align-items: flex-end;
+     padding: 2rem 0;
+     border-top: .1rem solid #ec755d;
+ 
+ }
+ 
+ .sales_footer_total > p {
+     font-size: .8rem;
+     text-align: center;
+     margin:0;
+     opacity: .5;
+ } 
+ .sales_footer_total > h1 {
+     font-size: 1.8rem;
+     margin:0;
+     opacity: 0;
+     animation: text_fade 1s .3s ease-out forwards ;
+ } 
+ 
+ .sales_footer_lastmonth > h4,p {
+     margin:0;
+     text-align: right;
+     
+ }
+ .sales_footer_lastmonth p {
+     font-size: .8rem;
+     opacity: .5;
+ }
+ .sales_header{
+     display: flex;
+     justify-content: space-between;
+     background-color: #ec755d;
+     align-items: center;
+     padding: 1rem 2rem;
+     border-radius: 1rem;
+ }
+ .sales_header_balance :where(p,h3) {
+     color: #fffcf7;
+     margin: 0;
+     text-align: left;
+ }
+ .sales_header_balance p {
+     font-size: .8rem;
+ }
+ .sales_header_balance h3 {
+     font-size: 1.2rem;
+ }
+ 
+ @keyframes rise {
+     from {
+         height: 0;
+         background-color: #000000; 
+     
+     }
+     to {
+         height:var(--i); 
+         background-color: #ec755d; 
+     
+     }
+ }
+ 
+ @keyframes text_fade {
+     from {
+         opacity: 0;
+     }
+ 
+     to {
+         opacity: 100%;
+     }
+ 
+ }
+ .author_info{
+     margin: 1rem 0;
+     width: 100%;
+     background: rgba(0, 0, 0, 0.7);
+     border-radius: 5px;
+     padding: .2rem;
+     display: flex;
+     color: #fff;
+ 
+ }
+ 
+ .author_info p,
+ .author_info ul {
+      margin: 0 auto;
+      font-size: .7rem;
+ }
+ .author_info ul {
+     list-style:'➤ ';
+     display: flex;
+     justify-content: flex-end;
+     align-items: center;
+     gap: 2rem;
+ }
+ 
+ .author_info ul li a {
+     text-decoration: none;
+     color: #fff;
+ }
+ .author_info ul li a:hover {
+     appearance: none;
+     text-decoration: underline;
+     text-shadow: 0px 0px 5px #fff;
+ }
+ .author_info ul li:hover {
+     transform: scale(1.1);
+ }
+ 
